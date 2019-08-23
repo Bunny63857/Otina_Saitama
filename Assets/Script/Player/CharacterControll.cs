@@ -9,12 +9,13 @@ public class CharacterControll : MonoBehaviour {
     private float speed;
     private bool IsShotGazeSet = false;
     private float gazeLength = 0;
-    public Slider shotGaze;
+    private Slider shotGaze;
     
 	// Use this for initialization
 	void Start () {
         this.rigid = GetComponent<Rigidbody2D>();
         speed = 100;
+        shotGaze=GameObject.Find("ShotGaze").GetComponent<Slider>();
 	}
 	
 	// Update is called once per frame
