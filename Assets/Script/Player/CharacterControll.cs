@@ -11,7 +11,7 @@ public class CharacterControll : MonoBehaviour {
     private float gazeLength = 0;
     private Slider shotGaze;
     
-	// Use this for initialization
+	// シーン内にあるゲージを読み込む
 	void Start () {
         this.rigid = GetComponent<Rigidbody2D>();
         speed = 100;

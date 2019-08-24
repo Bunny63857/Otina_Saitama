@@ -10,14 +10,8 @@ public class SetCharactor : MonoBehaviour {
 	void Awake(){
 		charactorNum=PlayerPrefs.GetInt("Charactor",0);
 	}
-	// Use this for initialization
+	//設定したキャラクター情報をもとにリストから呼び出す
 	void Start () {
-		//Debug.Log(charactorNum);
 		Instantiate(charactorList[charactorNum-1]);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }
