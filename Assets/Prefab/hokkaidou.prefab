@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7969094913415887796}
   - component: {fileID: 7969094913415887787}
   - component: {fileID: 7969094913415887786}
+  - component: {fileID: 1758081712993629951}
   m_Layer: 0
   m_Name: hokkaidou
   m_TagString: Untagged
@@ -228,3 +229,15 @@ PolygonCollider2D:
       - {x: -1.1, y: 0.84499997}
       - {x: -1.1, y: 0.955}
       - {x: -1.16, y: 1.045}
+--- !u!114 &1758081712993629951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7969094913415887785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c0fefe0a0fb2c942ac51f799ff2cf43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
