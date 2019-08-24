@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ActivateCharactorButton : MonoBehaviour
 {
     private int charactorNum;
-    //ステージの開放状況に合わせてボタンをアンロックする。
+    //キャラの開放状況に合わせてボタンをアンロックする。
     void SetActivation(){
         for(var i=0;i<transform.childCount;i++){
             if(i<=charactorNum){
