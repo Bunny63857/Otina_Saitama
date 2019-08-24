@@ -12,7 +12,7 @@ public class SetCharactor : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
-		Debug.Log(charactorNum);
+		//Debug.Log(charactorNum);
 		Instantiate(charactorList[charactorNum-1]);
 	}
 	
