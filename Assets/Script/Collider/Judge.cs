@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Judge : MonoBehaviour
 {
@@ -22,7 +23,12 @@ public class Judge : MonoBehaviour
             Debug.Log(col+"is lose");
             IsJudged=true;
             //シーン遷移やエフェクト等もここに書く
-            
+            if(col.CompareTag("Player")){
+                SceneManager.LoadScene("GameOver");
+            }
+            if(col.CompareTag("Enemy")){
+                SceneManager.LoadScene("GameClear");
+            }
         }
     }
 }
