@@ -22,6 +22,7 @@ public class Judge : MonoBehaviour
             Debug.Log(col+"is lose");
             IsJudged=true;
             //シーン遷移やエフェクト等もここに書く
+            
         }
     }
 }
