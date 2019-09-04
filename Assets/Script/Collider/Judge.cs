@@ -27,6 +27,7 @@ public class Judge : MonoBehaviour
                 SceneManager.LoadScene("GameOver");
             }
             if(col.CompareTag("Enemy")){
+                
                 SceneManager.LoadScene("GameClear");
             }
         }
