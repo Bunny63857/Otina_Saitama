@@ -12,9 +12,7 @@ public class Judge : MonoBehaviour
     void Start()
     {
         stageNum=PlayerPrefs.GetInt("Stage",0);
-        Debug.Log(stageNum);
         unlockStage=PlayerPrefs.GetInt("UnlockStage",0);
-        Debug.Log(unlockStage);
     }
 
     // Update is called once per frame
