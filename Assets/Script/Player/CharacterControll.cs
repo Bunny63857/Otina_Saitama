@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using IceMilkTea.Core;
 
 public class CharacterControll : MonoBehaviour {
     Rigidbody2D rigid;
