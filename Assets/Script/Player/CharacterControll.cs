@@ -12,6 +12,7 @@ public class CharacterControll : MonoBehaviour {
     private float gazeLength = 0;
     private Slider shotGaze;
     private ImtStateMachine<CharacterControll> stateMachine;
+    private float CharactorStopThreshold=2f;
     private enum StateEventID{
         Idle,
         Active,
@@ -27,6 +28,10 @@ public class CharacterControll : MonoBehaviour {
         protected override void Update(){
             if(Input.GetKeyDown(KeyCode.Z)){
                 Context.stateMachine.SendEvent((int)StateEventID.Active);
+            }
+            var speed= Context.rigid.velocity.magnitude;
+            if(speed<Context.CharactorStopThreshold){
+                Context.rigid.velocity=new Vector2();
             }
         }
     }
@@ -45,7 +50,6 @@ public class CharacterControll : MonoBehaviour {
             Vector2 startDirection = -1 * (endPos - Context.startPos).normalized;
             Context.rigid.AddForce(startDirection * Context.speed);
             Context.IsShotGazeSet = false;
-            //
             Context.stateMachine.SendEvent((int)StateEventID.Idle);
         }
         if (Context.IsShotGazeSet)
