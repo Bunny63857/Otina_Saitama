@@ -36,7 +36,6 @@ public class CharacterControll : MonoBehaviour {
         }
     }
     private class ActiveState:ImtStateMachine<CharacterControll>.State{
-        
         //プレイヤーを動かす処理
         protected override void Update(){
         if (Input.GetMouseButtonDown(0))
@@ -67,7 +66,13 @@ public class CharacterControll : MonoBehaviour {
         speed = 100;
         shotGaze=GameObject.Find("ShotGaze").GetComponent<Slider>();
 	}
-	
+    //他クラスからステートをいじりたい
+	public void EnableMove(){
+        stateMachine.SendEvent((int)StateEventID.Active);
+    }
+    public void DisableMove(){
+        stateMachine.SendEvent((int)StateEventID.Idle);
+    }
 	// Update is called once per frame
     /* 
 	void Update () {
