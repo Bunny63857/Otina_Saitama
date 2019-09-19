@@ -13,6 +13,7 @@ public class CharacterControll : MonoBehaviour {
     private Slider shotGaze;
     private ImtStateMachine<CharacterControll> stateMachine;
     private float CharactorStopThreshold=2f;
+    private GameObject enemy;
     private enum StateEventID{
         Idle,
         Active,
@@ -32,6 +33,7 @@ public class CharacterControll : MonoBehaviour {
             var speed= Context.rigid.velocity.magnitude;
             if(speed<Context.CharactorStopThreshold){
                 Context.rigid.velocity=new Vector2();
+                Context.enemy.GetComponent<EnemyController>().EnableMove();
             }
         }
     }
@@ -65,6 +67,7 @@ public class CharacterControll : MonoBehaviour {
         this.rigid = GetComponent<Rigidbody2D>();
         speed = 100;
         shotGaze=GameObject.Find("ShotGaze").GetComponent<Slider>();
+        enemy=GameObject.FindGameObjectWithTag("Enemy");
 	}
     //他クラスからステートをいじりたい
 	public void EnableMove(){

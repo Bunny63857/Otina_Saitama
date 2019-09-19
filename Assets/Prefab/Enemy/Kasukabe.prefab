@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4547542245050396424}
   - component: {fileID: 4423193543553587700}
   - component: {fileID: 2269661279545241568}
+  - component: {fileID: -8196671097485128280}
   m_Layer: 0
   m_Name: Kasukabe
   m_TagString: Enemy
@@ -391,3 +392,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-8196671097485128280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6534393622823668820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a92c8edd9052b34281a93ae47aac047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

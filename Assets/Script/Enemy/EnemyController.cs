@@ -10,7 +10,8 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D rigid;
     private float speed;
     private ImtStateMachine<EnemyController> stateMachine;
-    private float CharactorStopThreshold=2f;
+    private float CharactorStopThreshold=1f;
+    private bool IsAttacked=false;
     private enum StateEventID{
         Idle,
         Attack,
@@ -30,13 +31,14 @@ public class EnemyController : MonoBehaviour
     private class AttackState:ImtStateMachine<EnemyController>.State{
         protected override void Enter()
         {
-            Context.rigid.AddForce(Context.dir);
+            Context.StartCoroutine(Context.Attack());
         }
         protected override void Update(){
             Context.speed=Context.rigid.velocity.magnitude;
-            if(Context.speed<Context.CharactorStopThreshold){
+            if(Context.speed<Context.CharactorStopThreshold&&Context.IsAttacked){
                 Context.player.GetComponent<CharacterControll>().EnableMove();
                 Context.DisableMove();
+                Context.IsAttacked=false;
             }
         }
     }
@@ -53,11 +55,18 @@ public class EnemyController : MonoBehaviour
         player=GameObject.FindGameObjectWithTag("Player");
         rigid=GetComponent<Rigidbody2D>();
         dir=player.transform.position-transform.position;
+        stateMachine.Update();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         dir=player.transform.position-transform.position;
+        stateMachine.Update();
+        this.rigid.velocity *= 0.995f;
+    }
+    IEnumerator Attack(){
+        yield return new WaitForSeconds(3);
+        rigid.AddForce(dir*500);
+        IsAttacked=true;
     }
 }
