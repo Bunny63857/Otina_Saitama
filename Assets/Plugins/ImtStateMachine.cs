@@ -88,6 +88,7 @@ namespace IceMilkTea.Core
             /// <summary>
             /// ステートを更新するときの処理を行います
             /// </summary>
+            //Unityの仕様変更か、protected internal だとエラーを吐く
             protected internal virtual void Update()
             {
             }

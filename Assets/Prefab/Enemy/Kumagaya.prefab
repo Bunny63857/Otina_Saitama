@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2631989450790224117}
   - component: {fileID: 703272042113481664}
   - component: {fileID: 3104957053009728130}
+  - component: {fileID: -7251571530401372595}
   m_Layer: 0
   m_Name: Kumagaya
   m_TagString: Enemy
@@ -96,7 +97,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 3
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 680e90b52c1d659499f01d1d044ab81e, type: 2}
   m_Interpolate: 0
@@ -495,3 +496,15 @@ PolygonCollider2D:
       - {x: 6.3768954, y: -10.998887}
       - {x: 6.4104285, y: -10.976532}
       - {x: 7.002848, y: -10.68591}
+--- !u!114 &-7251571530401372595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158017026907663829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a92c8edd9052b34281a93ae47aac047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5138880413402953927}
   - component: {fileID: 2732783437553211879}
   - component: {fileID: 8915564720492638992}
+  - component: {fileID: -7852845361757904307}
   m_Layer: 0
   m_Name: Titibu
   m_TagString: Enemy
@@ -584,10 +585,22 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 5
   m_LinearDrag: 3
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-7852845361757904307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8980379600297134056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a92c8edd9052b34281a93ae47aac047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
