@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Judge : MonoBehaviour
+public class JudgeLearn : MonoBehaviour
 {
+    public string loser = "";
     private bool IsJudged=false;
     private int stageNum;
     private int unlockStage;
@@ -24,18 +25,20 @@ public class Judge : MonoBehaviour
     public void OnTriggerExit2D(Collider2D col){
         if(!IsJudged){
             Debug.Log(col+"is lose");
-            IsJudged=true;
+            loser = col.gameObject.name;
+            IsJudged = false;
+            // IsJudged=true;
             //シーン遷移やエフェクト等もここに書く
-            if(col.CompareTag("Player")){
-                SceneManager.LoadScene("GameOver");
-            }
-            if(col.CompareTag("Enemy")){
-                if(stageNum>unlockStage){
-                    PlayerPrefs.SetInt("UnlockStage",stageNum);
-                    PlayerPrefs.SetInt("UnlockCharactor",stageNum);
-                }
-                SceneManager.LoadScene("GameClear");
-            }
+            // if(col.CompareTag("Player")){
+            //     SceneManager.LoadScene("GameOver");
+            // }
+            // if(col.CompareTag("Enemy")){
+            //     if(stageNum>unlockStage){
+            //         PlayerPrefs.SetInt("UnlockStage",stageNum);
+            //         PlayerPrefs.SetInt("UnlockCharactor",stageNum);
+            //     }
+            //     SceneManager.LoadScene("GameClear");
+            // }
         }
     }
 }
