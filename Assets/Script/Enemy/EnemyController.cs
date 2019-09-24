@@ -37,6 +37,7 @@ public class EnemyController : MonoBehaviour
         }
         protected override void Update(){
             Context.speed=Context.rigid.velocity.magnitude;
+            //コルーチンの処理が終わるまでは到達しない
             if(Context.speed<Context.CharactorStopThreshold&&Context.IsAttacked){
                 Context.player.GetComponent<CharacterControll>().EnableMove();
                 Context.DisableMove();

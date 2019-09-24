@@ -12,8 +12,10 @@ public class CharacterControll : MonoBehaviour {
     private float gazeLength = 0;
     private Slider shotGaze;
     private ImtStateMachine<CharacterControll> stateMachine;
-    private float CharactorStopThreshold=2f;
+    private float CharactorStopThreshold=1f;
     private GameObject enemy;
+    [SerializeField]
+    private GameObject hitEffect;
     private enum StateEventID{
         Idle,
         Active,
@@ -152,5 +154,13 @@ public class CharacterControll : MonoBehaviour {
             gazeLength = 0;
         shotGaze.value = gazeLength;
         speed = gazeLength * 500f + 100f;
+    }
+    void OnCollisionEnter2D(Collision2D col){
+        if(col.gameObject.tag=="Enemy"){
+            foreach(ContactPoint2D point in col.contacts){
+                GameObject effect = Instantiate (hitEffect) as GameObject;
+                effect.transform.position = (Vector3)point.point;
+            }
+        }
     }
 }

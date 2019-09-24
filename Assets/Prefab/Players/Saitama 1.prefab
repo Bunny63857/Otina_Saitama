@@ -660,5 +660,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73f43b52b643a2e40ae48792e06d706b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitEffect: {fileID: 100012, guid: 06cff0f24d5664781859b6da3e421fa4, type: 3}
   direction: {fileID: 1395873781414848561, guid: ca6fcabd54fac43cf869349c0098cc37,
     type: 3}
