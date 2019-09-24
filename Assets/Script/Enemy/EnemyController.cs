@@ -70,7 +70,7 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(3);
         // rigid.AddForce(dir*500);
         // Debug.Log(agent.controlSignal);
-        rigid.AddForce(agent.controlSignal*Random.Range(4500,2000));
+        rigid.AddForce(agent.controlSignal*Random.Range(3000,1000));
         IsAttacked=true;
     }
 }

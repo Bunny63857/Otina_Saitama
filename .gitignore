@@ -36,8 +36,8 @@ sysinfo.txt
 *.unitypackage
 
 #learning
-Assets/ml-agents-master/
-Assets/ml-agents-master.meta
+#Assets/ml-agents-master/
+#Assets/ml-agents-master.meta
 UnitySDK.log
 .DS_Store
 Assets/summaries/
