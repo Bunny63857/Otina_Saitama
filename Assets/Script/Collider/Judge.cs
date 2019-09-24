@@ -21,7 +21,7 @@ public class Judge : MonoBehaviour
         
     }
     //プレイヤーか敵がフィールドから出た時に呼び出される
-    void OnTriggerExit2D(Collider2D col){
+    public void OnTriggerExit2D(Collider2D col){
         if(!IsJudged){
             Debug.Log(col+"is lose");
             IsJudged=true;

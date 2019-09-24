@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     private ImtStateMachine<EnemyController> stateMachine;
     private float CharactorStopThreshold=1f;
     private bool IsAttacked=false;
+    private MoverAgent agent;
     private enum StateEventID{
         Idle,
         Attack,
@@ -21,6 +22,7 @@ public class EnemyController : MonoBehaviour
         stateMachine.AddTransition<IdleState,AttackState>((int)StateEventID.Attack);
         stateMachine.AddTransition<AttackState,IdleState>((int)StateEventID.Idle);
         stateMachine.SetStartState<IdleState>();
+        agent = GameObject.FindGameObjectWithTag("Enemy").GetComponent<MoverAgent>();
     }
     private class IdleState:ImtStateMachine<EnemyController>.State{
         //何もしない
@@ -67,7 +69,9 @@ public class EnemyController : MonoBehaviour
     }
     IEnumerator Attack(){
         yield return new WaitForSeconds(3);
-        rigid.AddForce(dir*500);
+        // rigid.AddForce(dir*500);
+        // Debug.Log(agent.controlSignal);
+        rigid.AddForce(agent.controlSignal*Random.Range(3000,1000));
         IsAttacked=true;
     }
 }
