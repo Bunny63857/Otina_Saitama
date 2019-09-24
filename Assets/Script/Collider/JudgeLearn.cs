@@ -27,6 +27,8 @@ public class JudgeLearn : MonoBehaviour
             Debug.Log(col+"is lose");
             loser = col.gameObject.name;
             IsJudged = false;
+            //学習用に非表示
+
             // IsJudged=true;
             //シーン遷移やエフェクト等もここに書く
             // if(col.CompareTag("Player")){

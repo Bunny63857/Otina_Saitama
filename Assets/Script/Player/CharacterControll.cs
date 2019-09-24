@@ -52,7 +52,6 @@ public class CharacterControll : MonoBehaviour {
         protected override void Update(){
             if (Input.GetMouseButtonDown(0))
             {
-                Debug.Log("down");
                 Context.startPos = Input.mousePosition;
                 Context.IsShotGazeSet = true;
                 Context.direction.enabled = true;
@@ -71,7 +70,6 @@ public class CharacterControll : MonoBehaviour {
             }else if(Input.GetMouseButton(0)){
                 //drag action
                 Vector2 nowPos = Input.mousePosition;
-                Debug.Log(Context.direction.enabled);
                 Context.currentForce =Context.startPos-nowPos;
                 if (Context.currentForce.magnitude > this.maxMagnitude){
                     Context.currentForce *= this.arrowSize / Context.currentForce.magnitude;
