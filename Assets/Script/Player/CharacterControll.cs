@@ -155,19 +155,4 @@ public class CharacterControll : MonoBehaviour {
         shotGaze.value = gazeLength;
         speed = gazeLength * 500f + 100f;
     }
-
-    // public void OnMouseDrag()
-    // {
-    //     Debug.Log("drag");
-    //     Vector2 nowPos = Input.mousePosition;
-    //     this.currentForce = this.startPos-nowPos;
-    //     Debug.Log(this.currentForce.magnitude);
-    //     if (this.currentForce.magnitude > 200){
-    //         this.currentForce *= 4 / this.currentForce.magnitude;
-    //         this.direction.SetPosition(1, this.rigid.position + this.currentForce);
-    //     }else{
-    //         this.direction.SetPosition(1, this.rigid.position + this.currentForce/50);
-    //     }
-    //     this.direction.SetPosition(0, this.rigid.position);
-    // }
 }
