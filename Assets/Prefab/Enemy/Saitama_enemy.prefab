@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 838652651956885450}
   - component: {fileID: 6247940626821979634}
   - component: {fileID: 62542509065067256}
+  - component: {fileID: 4594248170219420209}
   m_Layer: 0
   m_Name: Saitama_enemy
   m_TagString: Enemy
@@ -660,3 +661,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a92c8edd9052b34281a93ae47aac047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4594248170219420209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59822138349308667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841111ee6edb24122b7911a00c6f5a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brain: {fileID: 11400000, guid: 91db8da00402b47629a7205d32456414, type: 2}
+  agentParameters:
+    agentCameras: []
+    agentRenderTextures: []
+    maxStep: 0
+    resetOnDone: 1
+    onDemandDecision: 0
+    numberOfActionsBetweenDecisions: 60
+  controlSignal: {x: 0, y: 0}
+  Target: {fileID: 8058267260794857049, guid: 418a5605e11b15b48b6479e195e63584, type: 3}
