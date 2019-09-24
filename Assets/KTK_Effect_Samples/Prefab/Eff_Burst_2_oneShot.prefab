@@ -28251,6 +28251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 400014}
+  - component: {fileID: 4324939430417476136}
   m_Layer: 0
   m_Name: Eff_Burst_2_oneShot
   m_TagString: Untagged
@@ -28273,6 +28274,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4324939430417476136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a8af38674002e448802089659b45264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 2
 --- !u!1 &100014
 GameObject:
   m_ObjectHideFlags: 0
