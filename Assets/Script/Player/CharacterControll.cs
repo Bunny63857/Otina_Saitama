@@ -12,7 +12,7 @@ public class CharacterControll : MonoBehaviour {
     private float gazeLength = 0;
     private Slider shotGaze;
     private ImtStateMachine<CharacterControll> stateMachine;
-    private float CharactorStopThreshold=2f;
+    private float CharactorStopThreshold=1f;
     private GameObject enemy;
     private enum StateEventID{
         Idle,
