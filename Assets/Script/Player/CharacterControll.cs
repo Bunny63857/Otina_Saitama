@@ -8,9 +8,9 @@ public class CharacterControll : MonoBehaviour {
     Rigidbody2D rigid;
     Vector2 startPos;
     private float speed;
-    private bool IsShotGazeSet = false;
+    // private bool IsShotGazeSet = false;
     private float gazeLength = 0;
-    private Slider shotGaze;
+    // private Slider shotGaze;
     private ImtStateMachine<CharacterControll> stateMachine;
     private float CharactorStopThreshold=1f;
     private GameObject enemy;
@@ -49,13 +49,13 @@ public class CharacterControll : MonoBehaviour {
     }
     private class ActiveState:ImtStateMachine<CharacterControll>.State{
         //プレイヤーを動かす処理
-        private float arrowSize = 4;
-        private float maxMagnitude = 200;
+        private float arrowSize = 5;
+        private float maxMagnitude = 300;
         protected override void Update(){
             if (Input.GetMouseButtonDown(0))
             {
                 Context.startPos = Input.mousePosition;
-                Context.IsShotGazeSet = true;
+                // Context.IsShotGazeSet = true;
                 Context.direction.enabled = true;
                 Context.direction.SetPosition(0, Context.rigid.position);
                 Context.direction.SetPosition(1, Context.rigid.position);
@@ -66,15 +66,18 @@ public class CharacterControll : MonoBehaviour {
                 Vector2 endPos = Input.mousePosition;
                 Vector2 startDirection = -1 * (endPos - Context.startPos).normalized;
                 Context.rigid.AddForce(startDirection * Context.speed);
-                Context.IsShotGazeSet = false;
+                // Context.IsShotGazeSet = false;
                 Context.stateMachine.SendEvent((int)StateEventID.Idle);
 
             }else if(Input.GetMouseButton(0)){
                 //drag action
                 Vector2 nowPos = Input.mousePosition;
                 Context.currentForce =Context.startPos-nowPos;
+                Context.speed = Context.currentForce.magnitude * 3;
+                Debug.Log(Context.currentForce.magnitude);
                 if (Context.currentForce.magnitude > this.maxMagnitude){
                     Context.currentForce *= this.arrowSize / Context.currentForce.magnitude;
+                    Context.speed = this.maxMagnitude;
                     Context.direction.SetPosition(1, Context.rigid.position + Context.currentForce);
                 }else{
                     Context.direction.SetPosition(1, Context.rigid.position + Context.currentForce/(maxMagnitude/arrowSize));
@@ -82,8 +85,8 @@ public class CharacterControll : MonoBehaviour {
                 Context.direction.SetPosition(0, Context.rigid.position);    
                        
             }
-            if (Context.IsShotGazeSet)
-                Context.ShotGazeSet();
+            // if (Context.IsShotGazeSet)
+            //     Context.ShotGazeSet();
             if (Input.GetKeyUp(KeyCode.Space))
             {
                 Context.rigid.velocity *= 0;
@@ -95,7 +98,7 @@ public class CharacterControll : MonoBehaviour {
         stateMachine.Update();
         this.rigid = GetComponent<Rigidbody2D>();
         speed = 100;
-        shotGaze=GameObject.Find("ShotGaze").GetComponent<Slider>();
+        // shotGaze=GameObject.Find("ShotGaze").GetComponent<Slider>();
         enemy=GameObject.FindGameObjectWithTag("Enemy");
 
         //インスタンス生成
@@ -147,14 +150,14 @@ public class CharacterControll : MonoBehaviour {
         stateMachine.Update();
         this.rigid.velocity *= 0.995f;
     }
-    void ShotGazeSet()
-    {
-        gazeLength += 0.025f;
-        if (gazeLength > 1.025f)
-            gazeLength = 0;
-        shotGaze.value = gazeLength;
-        speed = gazeLength * 500f + 100f;
-    }
+    // void ShotGazeSet()
+    // {
+    //     gazeLength += 0.025f;
+    //     if (gazeLength > 1.025f)
+    //         gazeLength = 0;
+    //     shotGaze.value = gazeLength;
+    //     speed = gazeLength * 500f + 100f;
+    // }
     void OnCollisionEnter2D(Collision2D col){
         if(col.gameObject.tag=="Enemy"){
             foreach(ContactPoint2D point in col.contacts){
