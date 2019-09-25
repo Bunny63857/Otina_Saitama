@@ -16,6 +16,7 @@ public class CharacterControll : MonoBehaviour {
     private GameObject enemy;
     [SerializeField]
     private GameObject hitEffect;
+    private AudioSource sound;
     private enum StateEventID{
         Idle,
         Active,
@@ -31,8 +32,6 @@ public class CharacterControll : MonoBehaviour {
         stateMachine.AddTransition<IdleState,ActiveState>((int)StateEventID.Active);
         stateMachine.AddTransition<ActiveState,IdleState>((int)StateEventID.Idle);
         stateMachine.SetStartState<ActiveState>();
-
-
     }
     private class IdleState:ImtStateMachine<CharacterControll>.State{
         //editorに怒られるけど問題なく動く
@@ -97,15 +96,15 @@ public class CharacterControll : MonoBehaviour {
         speed = 100;
         shotGaze=GameObject.Find("ShotGaze").GetComponent<Slider>();
         enemy=GameObject.FindGameObjectWithTag("Enemy");
-
+        sound=GetComponent<AudioSource>();
         //インスタンス生成
         direction = Resources.Load("Direction", typeof(LineRenderer)) as LineRenderer;
         LineRenderer childObject = Instantiate(direction, rigid.position, Quaternion.identity);
         childObject.transform.parent = this.transform;
         direction = childObject;
         // direction.enabled = false;
-
 	}
+
     //他クラスからステートをいじりたい
 	public void EnableMove(){
         stateMachine.SendEvent((int)StateEventID.Active);
@@ -161,6 +160,7 @@ public class CharacterControll : MonoBehaviour {
                 GameObject effect = Instantiate (hitEffect) as GameObject;
                 effect.transform.position = (Vector3)point.point;
             }
+            sound.PlayOneShot(sound.clip);
         }
     }
 }
