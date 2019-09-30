@@ -170,6 +170,7 @@ public class CharacterControll : MonoBehaviour {
             sound.PlayOneShot(sound.clip);
         }
     }
+    //エフェクトの多重生成を防ぐ
     IEnumerator WaitEffectTime(){
         effectFlag=false;
         yield return new WaitForSeconds(1);
