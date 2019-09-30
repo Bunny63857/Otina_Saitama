@@ -509,5 +509,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gimmickList:
-  - {fileID: 7845345817019788953, guid: b1d14758c5418b645a8fa85dbdf26b87, type: 3}
-  - {fileID: 7845345817019788953, guid: b1d14758c5418b645a8fa85dbdf26b87, type: 3}
+  - {fileID: 2765188552642078097, guid: 1edb980c05e1b914bbcc8004638beb2b, type: 3}
+  - {fileID: 5883498063354080266, guid: 319c0a87859d05d43b88861378680301, type: 3}
