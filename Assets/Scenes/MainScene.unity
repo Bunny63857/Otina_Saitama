@@ -994,26 +994,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c88cc14784ee44acbea2dab4f65ed42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  broadcastHub:
-    broadcastingBrains:
-    - {fileID: 11400000, guid: 91db8da00402b47629a7205d32456414, type: 2}
-    - {fileID: 11400000, guid: 2ad5b76d7cbc34b6dbfe8771cc7b58ae, type: 2}
-    _brainsToControl: []
-  maxSteps: 0
-  trainingConfiguration:
-    width: 80
-    height: 80
-    qualityLevel: 1
-    timeScale: 100
-    targetFrameRate: -1
-  inferenceConfiguration:
-    width: 1280
-    height: 720
-    qualityLevel: 5
-    timeScale: 1
-    targetFrameRate: 60
-  resetParameters:
-    resetParameters: []
 --- !u!4 &812086088
 Transform:
   m_ObjectHideFlags: 0
@@ -1046,22 +1026,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841111ee6edb24122b7911a00c6f5a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brain: {fileID: 11400000, guid: 91db8da00402b47629a7205d32456414, type: 2}
-  agentParameters:
-    agentCameras: []
-    agentRenderTextures: []
-    maxStep: 0
-    resetOnDone: 1
-    onDemandDecision: 0
-    numberOfActionsBetweenDecisions: 10
-  controlSignal: {x: 0, y: 0}
-  Target: {fileID: 1162973656}
---- !u!4 &1162973656 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3968575677570346255, guid: a726263780ccf80429109589184b1bd6,
-    type: 3}
-  m_PrefabInstance: {fileID: 34731858}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1186619423 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1332412845862599291, guid: 1fcb5ee56c4abac478d122d4f191b31a,

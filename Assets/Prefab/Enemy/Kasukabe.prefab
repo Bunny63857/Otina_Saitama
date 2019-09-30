@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4423193543553587700}
   - component: {fileID: 2269661279545241568}
   - component: {fileID: -8196671097485128280}
-  - component: {fileID: -5097932890625799134}
   m_Layer: 0
   m_Name: Kasukabe
   m_TagString: Enemy
@@ -406,27 +405,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gimmickList:
-  - {fileID: 7845345817019788953, guid: b1d14758c5418b645a8fa85dbdf26b87, type: 3}
-  - {fileID: 7845345817019788953, guid: b1d14758c5418b645a8fa85dbdf26b87, type: 3}
---- !u!114 &-5097932890625799134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6534393622823668820}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841111ee6edb24122b7911a00c6f5a61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  brain: {fileID: 11400000, guid: 91db8da00402b47629a7205d32456414, type: 2}
-  agentParameters:
-    agentCameras: []
-    agentRenderTextures: []
-    maxStep: 0
-    resetOnDone: 1
-    onDemandDecision: 0
-    numberOfActionsBetweenDecisions: 1
-  controlSignal: {x: 0, y: 0}
-  Target: {fileID: 0}
+  - {fileID: 3363971317693633536, guid: 09e84b8451041e44a8a89e2bc8a2528e, type: 3}

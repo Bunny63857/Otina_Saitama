@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2732783437553211879}
   - component: {fileID: 8915564720492638992}
   - component: {fileID: -7852845361757904307}
-  - component: {fileID: 5090011738324776170}
   m_Layer: 0
   m_Name: Titibu
   m_TagString: Enemy
@@ -606,27 +605,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gimmickList:
-  - {fileID: 7845345817019788953, guid: b1d14758c5418b645a8fa85dbdf26b87, type: 3}
-  - {fileID: 7845345817019788953, guid: b1d14758c5418b645a8fa85dbdf26b87, type: 3}
---- !u!114 &5090011738324776170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8980379600297134056}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841111ee6edb24122b7911a00c6f5a61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  brain: {fileID: 11400000, guid: 91db8da00402b47629a7205d32456414, type: 2}
-  agentParameters:
-    agentCameras: []
-    agentRenderTextures: []
-    maxStep: 0
-    resetOnDone: 1
-    onDemandDecision: 0
-    numberOfActionsBetweenDecisions: 1
-  controlSignal: {x: 0, y: 0}
-  Target: {fileID: 0}
+  - {fileID: 7551650759751345147, guid: 98e758f45fa8a8e44b4f7c869f5c43ee, type: 3}
