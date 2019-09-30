@@ -61,6 +61,7 @@ public class EnemyController : MonoBehaviour
         rigid=GetComponent<Rigidbody2D>();
         dir=player.transform.position-transform.position;
         stateMachine.Update();
+        //時間ないので筋肉解決
         for(int i=0;i<gimmickList.Count;i++){
             if(gimmickList.Count==1){
                 Instantiate(gimmickList[i],new Vector2(Random.Range(-5,-1),Random.Range(-3,3)),Quaternion.identity);
