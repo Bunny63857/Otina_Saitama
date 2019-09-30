@@ -61,8 +61,8 @@ public class EnemyController : MonoBehaviour
         rigid=GetComponent<Rigidbody2D>();
         dir=player.transform.position-transform.position;
         stateMachine.Update();
-        Instantiate(gimmickList[0],new Vector2(Random.Range(-5,5),Random.Range(1,3)),Quaternion.identity);
-        Instantiate(gimmickList[1],new Vector2(Random.Range(-5,5),Random.Range(-3,-1)),Quaternion.identity);
+        Instantiate(gimmickList[0],new Vector2(Random.Range(-5,-1),Random.Range(-3,3)),Quaternion.identity);
+        Instantiate(gimmickList[1],new Vector2(Random.Range(1,5),Random.Range(-3,3)),Quaternion.identity);
     }
 
     private void FixedUpdate()
