@@ -37,9 +37,10 @@ sysinfo.txt
 Otina_Saitama/
 
 #learning
-#Assets/ml-agents-master/
-#Assets/ml-agents-master.meta
+Assets/ml-agents-master/
+Assets/ml-agents-master.meta
 UnitySDK.log
 .DS_Store
 Assets/summaries/
 Assets/summaries.meta
+models/
