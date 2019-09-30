@@ -17,6 +17,7 @@ public class CharacterControll : MonoBehaviour {
     [SerializeField]
     private GameObject hitEffect;
     private AudioSource sound;
+    private bool effectFlag=true;
     private enum StateEventID{
         Idle,
         Active,
@@ -160,10 +161,19 @@ public class CharacterControll : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D col){
         if(col.gameObject.tag=="Enemy"){
             foreach(ContactPoint2D point in col.contacts){
-                GameObject effect = Instantiate (hitEffect) as GameObject;
-                effect.transform.position = (Vector3)point.point;
+                if(effectFlag){
+                    StartCoroutine(WaitEffectTime());
+                    GameObject effect = Instantiate (hitEffect) as GameObject;
+                    effect.transform.position = (Vector3)point.point;
+                }
             }
             sound.PlayOneShot(sound.clip);
         }
+    }
+    //エフェクトの多重生成を防ぐ
+    IEnumerator WaitEffectTime(){
+        effectFlag=false;
+        yield return new WaitForSeconds(1);
+        effectFlag=true;
     }
 }
