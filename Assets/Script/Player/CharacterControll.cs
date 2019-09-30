@@ -74,12 +74,13 @@ public class CharacterControll : MonoBehaviour {
                 Vector2 nowPos = Input.mousePosition;
                 Context.currentForce =Context.startPos-nowPos;
                 Context.speed = Context.currentForce.magnitude * 3;
-                Debug.Log(Context.currentForce.magnitude);
                 if (Context.currentForce.magnitude > this.maxMagnitude){
                     Context.currentForce *= this.arrowSize / Context.currentForce.magnitude;
-                    Context.speed = this.maxMagnitude;
+                    Context.speed = this.maxMagnitude*3;
+
                     Context.direction.SetPosition(1, Context.rigid.position + Context.currentForce);
                 }else{
+
                     Context.direction.SetPosition(1, Context.rigid.position + Context.currentForce/(maxMagnitude/arrowSize));
                 }
                 Context.direction.SetPosition(0, Context.rigid.position);    
