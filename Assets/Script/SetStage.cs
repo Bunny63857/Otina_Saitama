@@ -6,6 +6,8 @@ public class SetStage : MonoBehaviour
 {
     private int stageNum;
     [SerializeField]
+    private List<GameObject> gimmickList; 
+    [SerializeField]
 	private List<GameObject> stageList;
     void Awake(){
         stageNum=PlayerPrefs.GetInt("Stage",0);
@@ -14,6 +16,7 @@ public class SetStage : MonoBehaviour
     void Start()
     {
         Instantiate(stageList[stageNum-1]);
+        
     }
 
     // Update is called once per frame

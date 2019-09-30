@@ -405,6 +405,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a92c8edd9052b34281a93ae47aac047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gimmickList:
+  - {fileID: 7845345817019788953, guid: b1d14758c5418b645a8fa85dbdf26b87, type: 3}
+  - {fileID: 7845345817019788953, guid: b1d14758c5418b645a8fa85dbdf26b87, type: 3}
 --- !u!114 &-5097932890625799134
 MonoBehaviour:
   m_ObjectHideFlags: 0

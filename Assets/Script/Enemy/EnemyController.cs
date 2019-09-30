@@ -13,6 +13,8 @@ public class EnemyController : MonoBehaviour
     private float CharactorStopThreshold=1f;
     private bool IsAttacked=false;
     private MoverAgent agent;
+    [SerializeField]
+    private List<GameObject> gimmickList;
     private enum StateEventID{
         Idle,
         Attack,
@@ -59,6 +61,8 @@ public class EnemyController : MonoBehaviour
         rigid=GetComponent<Rigidbody2D>();
         dir=player.transform.position-transform.position;
         stateMachine.Update();
+        Instantiate(gimmickList[0],new Vector2(Random.Range(-5,5),Random.Range(1,3)),Quaternion.identity);
+        Instantiate(gimmickList[1],new Vector2(Random.Range(-5,5),Random.Range(-3,-1)),Quaternion.identity);
     }
 
     private void FixedUpdate()
