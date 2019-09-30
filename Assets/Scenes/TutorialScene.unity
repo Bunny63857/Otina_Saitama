@@ -708,7 +708,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1051044009}
+      - m_Target: {fileID: 1051044011}
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
@@ -1119,7 +1119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4507e8e3f17ad04694aca9d7fa20d4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: TutorialScene
+  sceneName: CharactorSelectScene
 --- !u!114 &2114259780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1163,7 +1163,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1051044009}
+      - m_Target: {fileID: 2114259779}
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
